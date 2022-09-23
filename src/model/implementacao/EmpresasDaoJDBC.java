@@ -6,19 +6,18 @@ import java.util.List;
 import model.Empresas;
 import model.dao.EmpresasDao;
 
-public class EmpresasDaoJDBC implements EmpresasDao{
+public class EmpresasDaoJDBC implements EmpresasDao {
 
-	
-private static Connection connection = null;
-	
+	private static Connection connection = null;
+
 	public EmpresasDaoJDBC(Connection connection) {
 		this.connection = connection;
 	}
-	
+
 	@Override
 	public void insert(Empresas empresas) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -30,13 +29,13 @@ private static Connection connection = null;
 	@Override
 	public void update(Empresas empresas) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
