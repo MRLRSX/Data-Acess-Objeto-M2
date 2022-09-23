@@ -1,23 +1,17 @@
 package application;
 
-import java.util.List;
-
-import model.Cidades;
-import model.dao.CidadesDao;
+import model.Estados;
 import model.dao.DaoFactory;
+import model.dao.EstadosDao;
 
 public class Program_01 {
 	public static void main(String[] args) {
-           
-		CidadesDao cidadesDao = DaoFactory.createCidadesDaoJDBC();
-		Cidades cidades = cidadesDao.findById(1L);
-		System.out.println(cidades + "\n" + cidades.getEstados());
-		Cidades cidades01 = new Cidades(4L, "João Pinheiro YY", cidades.getEstados() ,320.00, 0.07);
-		//cidadesDao.insert(cidades01);
-		//cidadesDao.update(cidades01);
-		cidadesDao.deleteById(4L);
-		List<Cidades> listaCidades = cidadesDao.findAll();
-		listaCidades.stream().forEach(System.out::println);
-		listaCidades.stream().map(c -> c.getEstados()).forEach(System.out::println);
+          EstadosDao estadoDao = DaoFactory.createEstadosDaoJDBC();
+          System.out.println(estadoDao.findById(1L));
+          System.out.println("\n\n");
+          //estadoDao.deleteById(1L);
+          //estadoDao.insert(new Estados(1L, "Alagoas", "AL", "Nordeste", 3.38));
+          estadoDao.findAll().stream().forEach(System.out::println);
+          
 	}
 }
