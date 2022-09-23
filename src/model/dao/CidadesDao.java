@@ -10,7 +10,7 @@ public interface CidadesDao {
 	
 	public Cidades findById(Long id);
 	
-	public void update(Cidades cidadess);
+	public void update(Cidades cidades);
 	
 	public void deleteById(Long id);
 	
