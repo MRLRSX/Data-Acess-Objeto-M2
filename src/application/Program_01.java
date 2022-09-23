@@ -10,5 +10,7 @@ public class Program_01 {
 		CidadesDao cidadesDao = DaoFactory.createCidadesDaoJDBC();
 		Cidades cidades = cidadesDao.findById(1L);
 		System.out.println(cidades + "\n" + cidades.getEstados());
+		Cidades cidades01 = new Cidades(1L, "João Pinheiro", cidades.getEstados() ,320.00, 0.07);
+		cidadesDao.insert(cidades01);
 	}
 }

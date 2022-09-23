@@ -28,8 +28,8 @@ public class CidadesDaoJDBC implements CidadesDao {
 			prepared = connection.prepareStatement("INSERT INTO tb_cidades (nome_cidade, estado_id, area_cidade, populacao_cidade) VALUES (?, ?,?, ?)");
 			prepared.setString(1, cidades.getNome());
 			prepared.setLong(2, cidades.getEstados().getId());
-			prepared.setDouble(2, cidades.getArea());
-			prepared.setInt(2, cidades.getPopulacao());
+			prepared.setDouble(3, cidades.getArea());
+			prepared.setDouble(4, cidades.getPopulacao());
 			prepared.executeUpdate();
 		}catch(SQLException erro) {
 			throw new DBException(erro.getMessage());
@@ -50,7 +50,7 @@ public class CidadesDaoJDBC implements CidadesDao {
 			 result = prepared.executeQuery();
 			 while(result.next()) {
 				 estados = new Estados(result.getLong("id_estados"), result.getString("nome_estado"), result.getString("sigla_estado"), result.getString("regiao_estado"), result.getDouble("populacao_estados"));
-				 cidades = new Cidades(result.getLong("id_cidades"), result.getString("nome_cidade"), estados , result.getDouble("area_cidade"), result.getInt("populacao_cidade"));
+				 cidades = new Cidades(result.getLong("id_cidades"), result.getString("nome_cidade"), estados , result.getDouble("area_cidade"), result.getDouble("populacao_cidade"));
 			 }
 			 return cidades;
 		}catch(SQLException erro) {

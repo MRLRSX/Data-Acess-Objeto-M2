@@ -13,12 +13,12 @@ public class Cidades implements Serializable {
 	private String nome;
 	private Estados estados;
 	private Double area;
-	private Integer populacao;
+	private Double populacao;
     private List<Empresas> empresas = new ArrayList<>();
 	public Cidades() {
 	}
 
-	public Cidades(Long id, String nome, Estados estados, Double area, Integer populacao) {
+	public Cidades(Long id, String nome, Estados estados, Double area, Double populacao) {
 		this.id = id;
 		this.nome = nome;
 		this.estados = estados;
@@ -58,11 +58,11 @@ public class Cidades implements Serializable {
 		this.area = area;
 	}
 
-	public Integer getPopulacao() {
+	public Double getPopulacao() {
 		return populacao;
 	}
 
-	public void setPopulacao(Integer populacao) {
+	public void setPopulacao(Double populacao) {
 		this.populacao = populacao;
 	}
 
