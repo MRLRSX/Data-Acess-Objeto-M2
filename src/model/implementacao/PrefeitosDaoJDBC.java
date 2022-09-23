@@ -1,5 +1,6 @@
 package model.implementacao;
 
+import java.sql.Connection;
 import java.util.List;
 
 import model.Prefeitos;
@@ -7,6 +8,12 @@ import model.dao.PrefeitosDao;
 
 public class PrefeitosDaoJDBC implements PrefeitosDao {
 
+	private static Connection connection = null;
+	
+	public PrefeitosDaoJDBC (Connection connection) {
+	    this.connection = connection;
+	}
+	
 	@Override
 	public void insert(Prefeitos prefeitos) {
 		// TODO Auto-generated method stub
